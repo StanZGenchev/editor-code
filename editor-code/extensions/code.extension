@@ -1,0 +1,5 @@
+{
+    "module": "editor-code/configs/code-editor.js",
+    "extensionPoint": "platform-editors",
+    "description": "Code editor"
+}
