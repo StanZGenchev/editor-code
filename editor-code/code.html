@@ -19,20 +19,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
 		<title config-title></title>
-		<script type="text/javascript" src="/services/web/editor-code/js/shared-context.js"></script>
-		<script type="text/javascript" src="/services/web/editor-code/configs/code-editor.js"></script>
-		<script type="text/javascript" src="/services/js/platform-core/services/loader.js?id=editor-js"></script>
-		<script type="text/javascript" src="/webjars/monaco-editor/min/vs/loader.js"></script>
 		<link type="text/css" data-name="/webjars/monaco-editor/min/vs/editor/editor.main" rel="stylesheet" href="/webjars/monaco-editor/min/vs/editor/editor.main.css">
 		<link type="text/css" rel="stylesheet" href="/services/js/platform-core/services/loader.js?id=view-css" />
-		<script type="text/javascript" src="js/code.js"></script>
+		<link type="text/css" rel="stylesheet" href="/services/web/editor-code/css/editor.css" />
+		<script type="text/javascript" src="/services/web/editor-code/configs/code-editor.js"></script>
+		<script type="text/javascript" src="/services/js/platform-core/services/loader.js?id=editor-js"></script>
+		<script type="text/javascript" src="/services/web/service-registry/registry.js"></script>
+		<script type="text/javascript" src="/services/web/service-git/git.js"></script>
+		<script type="text/javascript" src="/webjars/monaco-editor/min/vs/loader.js"></script>
+		<script type="text/javascript" src="/services/web/editor-code/js/assignmentsParser.js"></script>
+		<script type="module" src="js/code.js"></script>
 	</head>
 
-	<body class="bk-vbox" shortcut="'ctrl+s'" shortcut-action="saveAction">
+	<body spellcheck="false" class="bk-vbox">
 		<bk-busy-indicator-extended class="bk-fill-parent" ng-hide="state.error || !state.isBusy" size="l">{{::state.busyText}}</bk-busy-indicator-extended>
 
 		<div class="bk-fill-parent" ng-show="!state.error && !state.isBusy">
-			<div id="monaco" class="bk-fill-parent"></div>
+			<div id="embeddedEditor" ng-non-bindable></div>
 		</div>
 
 		<bk-message-page glyph="sap-icon--error" ng-if="state.error">

@@ -14,7 +14,36 @@ const editorData = {
 	region: 'center',
 	label: 'Code',
 	path: '/services/web/editor-code/code.html',
-	contentTypes: ['application/javascript',]
+	contentTypes: [
+		'image/svg+xml',
+		'text/plain',
+		'text/html',
+		'text/csv',
+		'text/css',
+		'application/javascript',
+		'application/json',
+		'application/json+extension-point',
+		'application/json+extension',
+		'application/json+table',
+		'application/json+view',
+		'application/json+job',
+		'application/json+xsjob',
+		'application/json+xsaccess',
+		'application/json+listener',
+		'application/json+websocket',
+		'application/json+access',
+		'application/json+roles',
+		'application/json+csvim',
+		'application/json+report',
+		'application/hdbti',
+		'application/xml',
+		'application/bpmn+xml',
+		'application/database-schema-model+xml',
+		'application/entity-data-model+xml',
+		'application/json+form',
+		'application/xml+calculationview',
+		'application/json+hdi'
+	]
 };
 if (typeof exports !== 'undefined') {
 	exports.getEditor = () => editorData;
